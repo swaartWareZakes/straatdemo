@@ -1,32 +1,31 @@
-
 export const portfolioContent = [
   {
     id: 1,
-    img: "/assets/img/portfolio/taxi-tv-ads.png",
+    img: "https://iili.io/KO4p2Re.jpg",
     categorie: "Taxi TV Advertising",
     title: "Specials Campaign",
   },
   {
     id: 2,
-    img: "/assets/img/portfolio/street-billboard.png",
+    img: "https://iili.io/KO626Lg.jpg",
     categorie: "Digital Out-of-Home (DOOH)",
     title: "Streetwise Bucket Billboard",
   },
   {
     id: 3,
-    img: "/assets/img/portfolio/location-targeted.png",
+    img: "https://iili.io/KO6B8YJ.jpg",
     categorie: "Location-Based Targeting",
     title: "Braamfontein Youth Activation",
   },
   {
     id: 4,
-    img: "/assets/img/portfolio/brand-activation.png",
+    img: "https://iili.io/KO6ohhl.jpg",
     categorie: "Brand Activations",
     title: "Nyama Street Sampling",
   },
   {
     id: 5,
-    img: "/assets/img/portfolio/community-drive.png",
+    img: "https://iili.io/KO6TKa1.jpg",
     categorie: "Community Engagement",
     title: "Taxi Rank Awareness Drive",
   },
