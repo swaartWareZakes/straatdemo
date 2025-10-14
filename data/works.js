@@ -2,33 +2,33 @@
 export const portfolioContent = [
   {
     id: 1,
-    img: "/assets/img/portfolio/taxi-tv-ads.png",
-    categorie: "Taxi TV Advertising",
-    title: "Specials Campaign",
+    img: "https://iili.io/Ke7iRlR.jpg",
+    categorie: "Senzo Vilakazi",
+    title: "Sales Executive",
   },
   {
     id: 2,
-    img: "/assets/img/portfolio/street-billboard.png",
-    categorie: "Digital Out-of-Home (DOOH)",
-    title: "Streetwise Bucket Billboard",
+    img: "https://iili.io/Ke7iIVa.jpg",
+    categorie: "Sazile Zuma",
+    title: "Chief Financial Officer",
   },
   {
     id: 3,
-    img: "/assets/img/portfolio/location-targeted.png",
-    categorie: "Location-Based Targeting",
-    title: "Braamfontein Youth Activation",
+    img: "https://iili.io/Ke7ifSV.jpg",
+    categorie: "Naphtal Mbokazi",
+    title: "Chief Operating Officer",
   },
   {
     id: 4,
-    img: "/assets/img/portfolio/brand-activation.png",
-    categorie: "Brand Activations",
-    title: "Nyama Street Sampling",
+    img: "https://iili.io/Ke7iAKv.jpg",
+    categorie: "Karabo Mashishi",
+    title: "Sales Executive",
   },
   {
     id: 5,
-    img: "/assets/img/portfolio/community-drive.png",
-    categorie: "Community Engagement",
-    title: "Taxi Rank Awareness Drive",
+    img: "https://iili.io/Ke7iQzF.jpg",
+    categorie: "Dzunani Nyalunga",
+    title: "Chief Executive Officer",
   },
 ];
 

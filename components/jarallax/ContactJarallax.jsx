@@ -14,7 +14,7 @@ const ContactJarallax = () => {
           <div className="ptf-spacer" style={{ "--ptf-xxl": "0.625rem" }}></div>
           <div className="fz-120 fz-90--md has-white-color fw-bold lh-1p1">
             <Link href="/contact" className="ptf-filled-link">
-              Call StraatAfrice
+              Call StraatAfrica
             </Link>
           </div>
           <div className="fz-80 has-white-color">

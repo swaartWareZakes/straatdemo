@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 const Slider = dynamic(() => import("react-slick"), { ssr: false });
 
-import {portfolioContent} from '../../data/works'
+import { portfolioContent } from "../../data/works";
 
 const Portfolio = () => {
   const settings = {
@@ -20,21 +20,8 @@ const Portfolio = () => {
     autoplay: false,
     centerMode: true,
     responsive: [
-      {
-        breakpoint: 991,
-        settings: {
-          slidesToShow: 2,
-          dots: true,
-          centerMode: false,
-        },
-      },
-      {
-        breakpoint: 576,
-        settings: {
-          slidesToShow: 1,
-          dots: true,
-        },
-      },
+      { breakpoint: 991, settings: { slidesToShow: 2, dots: true, centerMode: false } },
+      { breakpoint: 576, settings: { slidesToShow: 1, dots: true } },
     ],
   };
 
@@ -42,27 +29,38 @@ const Portfolio = () => {
     <div className="ptf-content-slider swiper-container slide-portfolio">
       <div className="swiper-wrapper">
         <Slider {...settings}>
-          {/* <!--Portfolio Item--> */}
           {portfolioContent.map((item, i) => (
             <article className="ptf-work ptf-work--style-3" key={i}>
-              <div className="ptf-work__media">
-                <Link
-                   href={`/`}
-                  className="ptf-work__link"
-                ></Link>
+              {/* Consistent aspect ratio so faces don’t get cut off */}
+              <div
+                className="ptf-work__media"
+                style={{
+                  position: "relative",
+                  width: "100%",
+                  aspectRatio: "4 / 5", // uniform portrait shape
+                  overflow: "hidden",
+                  borderRadius: 12,
+                }}
+              >
+                <Link href="/" className="ptf-work__link" />
                 <Image
-                      width={1200}
-                      height={1200}
-                      style={{width : '100%' , height: '100%'}} src={item.img} alt="work" loading="lazy" />
+                  src={item.img}
+                  alt={item.title}
+                  fill
+                  sizes="(min-width: 1400px) 30vw, (min-width: 992px) 33vw, (min-width: 576px) 50vw, 100vw"
+                  quality={90}
+                  priority={i < 3}
+                  style={{
+                    objectFit: "cover",
+                    objectPosition: item.focal || "50% 20%", // crop slightly upward by default
+                  }}
+                />
               </div>
+
               <div className="ptf-work__meta">
                 <div className="ptf-work__category">{item.categorie}</div>
                 <h4 className="ptf-work__title">
-                  <Link
-                    href={`/`}
-                  >
-                    {item.title}
-                  </Link>
+                  <Link href="/">{item.title}</Link>
                 </h4>
               </div>
             </article>

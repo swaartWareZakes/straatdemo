@@ -213,7 +213,7 @@ const HomeDark = () => {
           <section
             className="jarallax jarallax-img position-relative"
             style={{
-              backgroundImage: `url(/assets/img/banner.png)`,
+              backgroundImage: `url(https://iili.io/Ke5vdsS.png)`,
             }}
           >
             {/* Dark overlay */}
@@ -224,7 +224,7 @@ const HomeDark = () => {
                 left: 0,
                 right: 0,
                 bottom: 0,
-                background: "rgba(0, 0, 0, 0.6)", // adjust opacity as needed
+                background: "rgba(0, 0, 0, 0.1)", // adjust opacity as needed
                 zIndex: 1,
               }}
             />

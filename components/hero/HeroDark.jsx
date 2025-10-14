@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-const heroImg = "https://iili.io/KOrgeou.jpg";
+const heroImg = "https://iili.io/KOtVkap.jpg";
 const circleText = "/assets/img/root/home-dark/circle2.png";
 const circleLogo = "/assets/img/root/home-dark/circle-logo.png";
 const heroContent = {

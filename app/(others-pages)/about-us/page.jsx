@@ -127,7 +127,7 @@ results.
                             loading="lazy"
                             className="lay2"
                             style={{ zIndex: "1" }}
-                            srcSet="/assets/img/root/about-us/people.png"
+                            srcSet="https://iili.io/Ke7nV24.png"
                           />
                           <img
                             src="/assets/img/root/about-us/banner.png"

@@ -5,24 +5,22 @@ import React from "react";
 const socialList = [
   {
     iconName: "socicon-twitter",
-    link: "https://twitter.com/",
+    link: "https://x.com/StraatAfrica?t=LICMg9hbkpXBf-_WLgOWfg&s=09",
   },
   {
     iconName: "socicon-facebook",
-    link: "https://www.facebook.com/",
+    link: "https://www.facebook.com/share/1AGY8H21wd/",
   },
   {
     iconName: "socicon-instagram",
-    link: "https://www.instagram.com/",
+    link: "https://www.instagram.com/straatafrica?igsh=MXZjb3l3MTM5eWg4cA==",
   },
   {
-    iconName: "socicon-pinterest",
-    link: "https://www.pinterest.com/",
+    iconName: "socicon-linkedin",
+    link: "https://www.linkedin.com/company/straat-africa/",
   },
-  {
-    iconName: "socicon-dribbble",
-    link: "https://dribbble.com/",
-  },
+ 
+
 ];
 
 const SocialTwo = () => {
