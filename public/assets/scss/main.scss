@@ -40,6 +40,15 @@
 /* 01. Helpers */
 @import "abstracts/functions";
 @import "abstracts/mixins";
+
+/* Local font face (served from /public/montserrat) */
+@font-face {
+    font-family: "Montserrat Black";
+    src: url("/assets/fonts/montserrat/Montserrat-Black.ttf") format("truetype");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
 @import "abstracts/variables";
 @import "abstracts/keyframes";
 @import "abstracts/snippets";

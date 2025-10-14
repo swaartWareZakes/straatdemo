@@ -33,7 +33,7 @@ $base_font_size: 16px;
   @include defineColorHSLA("--ptf-color-18", 0, 0%, 0%, 80%); // #000, 80%
   @include defineColorHSL("--ptf-color-19", 45, 17%, 95%); // #f5f4f1
   // Fonts
-  --ptf-primary-font: "Montserrat Medium";
+  --ptf-primary-font: "Montserrat Black", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --ptf-secondary-font: "Helvetica Regular";
   // Icons
   --ptf-socicon: "Socicon";
