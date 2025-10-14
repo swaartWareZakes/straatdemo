@@ -115,7 +115,7 @@ const HomeDark = () => {
                   <div className="ptf-spacer" style={{ "--ptf-xxl": "1.25rem" }}></div>
                   <div className="ptf-animated-block" data-aos="fade" data-aos-delay="200">
                     <Link className="ptf-link-with-arrow fz-48 has-3-color" href="/works">
-                      Our Campaigns
+                      Our Staff
                       <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" style={{ height: "1em" }} viewBox="0 0 17 17">
                         <path d="M16 .997V10h-1V2.703L4.683 13l-.707-.708L14.291 1.997H6.975v-1H16z" />
                       </svg>
