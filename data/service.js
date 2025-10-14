@@ -234,19 +234,19 @@ export const brandContent = [
   {
     delayAnimation: "200",
     serviceList: [
-      { id: 1, name: "Chicken Licken", webLink: "#" },
-      { id: 2, name: "Shoprite", webLink: "#" },
-      { id: 3, name: "Red Bull", webLink: "#" },
-      { id: 4, name: "MTN", webLink: "#" },
-      { id: 5, name: "Coca-Cola", webLink: "#" },
+      { id: 1, name: "Moving Walls", webLink: "#" },
+      { id: 2, name: "Sebenza Wifi", webLink: "#" },
+      // { id: 3, name: "Red Bull", webLink: "#" },
+      // { id: 4, name: "MTN", webLink: "#" },
+      // { id: 5, name: "Coca-Cola", webLink: "#" },
     ],
   },
   {
     delayAnimation: "300",
     serviceList: [
-      { id: 6, name: "Ackermans", webLink: "#" },
-      { id: 7, name: "Capitec", webLink: "#" },
-      { id: 8, name: "Zapper", webLink: "#" },
+      // { id: 6, name: "Ackermans", webLink: "#" },
+      // { id: 7, name: "Capitec", webLink: "#" },
+      // { id: 8, name: "Zapper", webLink: "#" },
     ],
   },
 ];
