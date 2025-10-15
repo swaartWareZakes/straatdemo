@@ -79,28 +79,29 @@ SOLUTIONS
                             ></div>
                             <p className="fz-24 has-1-color">
                             Together, let’s
-redefine South
-Africa’s media
-landscape.
-We pride ourselves
-in delivering
-impactful, culturally
-attuned media
-campaigns, bridging
-the gap between
-commercial
-excellence and
-positive social
-change. From
-bustling urban
-centres to vibrant
-peri-urban
-communities, our
-innovative media
-solutions captivate
-audiences and
-deliver measurable
-results.
+                            redefine South
+                            Africa’s media
+                            landscape.
+                            We pride ourselves
+                            in delivering
+                            impactful, culturally
+                            attuned media
+                            campaigns, bridging
+                            the gap between
+                            commercial
+                            excellence and
+                            positive social
+                            change. From
+                            bustling urban
+                            centres to vibrant
+                            peri-urban
+                            communities, our
+                            innovative media
+                            solutions captivate
+                            audiences and
+                            deliver measurable
+                            results.
+                                                        
                             </p>
                           </div>
                         </div>
@@ -127,7 +128,7 @@ results.
                             loading="lazy"
                             className="lay2"
                             style={{ zIndex: "1" }}
-                            srcSet="https://iili.io/Ke7nV24.png"
+                            srcSet="https://iili.io/KebaMTQ.png"
                           />
                           <img
                             src="/assets/img/root/about-us/banner.png"

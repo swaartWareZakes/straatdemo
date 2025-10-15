@@ -2,9 +2,13 @@
 
 import { Gallery, Item } from "react-photoswipe-gallery";
 import Image from "next/image";
+
 const imageList = [
-  { img: "/assets/img/aboutus1.png", delayAnimation: "0" },
-  { img: "/assets/img/about2.png", delayAnimation: "100" },
+  { img: "https://iili.io/KeDLe5X.png", delayAnimation: "0" },
+  { img: "https://iili.io/KetYAsn.png", delayAnimation: "100" },
+  { img: "https://iili.io/KebOHaR.png", delayAnimation: "0" },
+  { img: "https://iili.io/Kebemdv.png", delayAnimation: "100" },
+
 ];
 
 const ImageGrid = () => {
@@ -13,30 +17,50 @@ const ImageGrid = () => {
       <div className="row" style={{ "--bs-gutter-y": "2rem" }}>
         {imageList.map((val, i) => (
           <div className="col-6" key={i}>
-            {/* <!--Animated Block--> */}
             <div
               className="ptf-animated-block"
               data-aos="fade"
               data-aos-delay={val.delayAnimation}
             >
-              {/* <!--Simple Image--> */}
-              <div className="ptf-simple-image">
+              <div
+                className="ptf-simple-image"
+                style={{
+                  position: "relative",
+                  width: "100%",
+                  height: "600px", // fixed height for uniform layout
+                  overflow: "hidden",
+                  borderRadius: "10px",
+                }}
+              >
                 <Item
                   original={val.img}
                   thumbnail={val.img}
-                  width={636}
-                  height={512}
+                  width={745}
+                  height={600}
                 >
                   {({ ref, open }) => (
                     <Image
-                      width={1200}
-                      height={1200}
-                      style={{ width: "100%", height: "100%" }}
                       src={val.img}
                       alt="gallery"
-                      role="button"
+                      width={745}
+                      height={600}
                       ref={ref}
                       onClick={open}
+                      role="button"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover", // ensures even crop
+                        objectPosition: "center",
+                        cursor: "pointer",
+                        transition: "transform 0.4s ease",
+                      }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.transform = "scale(1.03)")
+                      }
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.transform = "scale(1)")
+                      }
                     />
                   )}
                 </Item>
