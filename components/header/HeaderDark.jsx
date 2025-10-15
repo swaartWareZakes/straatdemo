@@ -13,54 +13,47 @@ const HeaderDark = () => {
   const toggleMenu = () => setIsOpen((s) => !s);
   const closeMenu = () => setIsOpen(false);
 
-  // Sticky header on scroll
   useEffect(() => {
-    const changeBackground = () => {
-      if (window.scrollY >= 80) setNavbar(true);
-      else setNavbar(false);
-    };
-    window.addEventListener("scroll", changeBackground);
-    return () => window.removeEventListener("scroll", changeBackground);
+    const onScroll = () => setNavbar(window.scrollY >= 80);
+    onScroll();
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Lock body scroll when menu is open
   useEffect(() => {
-    if (typeof document !== "undefined") {
-      document.body.style.overflow = isOpen ? "hidden" : "";
-    }
+    document.body.style.overflow = isOpen ? "hidden" : "";
   }, [isOpen]);
 
   return (
     <>
-      <header className="ptf-header ptf-header--style-5 ptf-header--opaque">
+      <header className="ptf-header ptf-header--style-5">
         <div
           className={
             navbar
-              ? "ptf-navbar ptf-navbar--main ptf-navbar--sticky ptf-navbar--fixed"
-              : "ptf-navbar ptf-navbar--main ptf-navbar--sticky"
+              ? "ptf-navbar ptf-navbar--main ptf-navbar--sticky ptf-navbar--transparent ptf-navbar--white-text-on-top ptf-navbar--fixed ptf-navbar--solid"
+              : "ptf-navbar ptf-navbar--main ptf-navbar--sticky ptf-navbar--transparent ptf-navbar--white-text-on-top"
           }
         >
           <div className="container-xxl">
             <div className="ptf-navbar-inner">
               {/* Logo */}
               <Link className="ptf-navbar-logo" href="/" aria-label="Straat Africa home">
+                {/* Show white logo on transparent, switch when solid */}
                 <Image
                   width={151}
                   height={146}
-                  style={{ objectFit: "contain" }}
                   className="black"
+                  style={{ objectFit: "contain" }}
                   src="/assets/img/root/lg.webp"
-                  alt="Straat Africa logo"
-                  loading="lazy"
+                  alt="Straat Africa"
                 />
                 <Image
                   width={151}
                   height={146}
-                  style={{ objectFit: "contain" }}
                   className="white"
+                  style={{ objectFit: "contain" }}
                   src="/assets/img/root/lg.webp"
-                  alt="Straat Africa logo"
-                  loading="lazy"
+                  alt="Straat Africa"
                 />
               </Link>
 
@@ -69,7 +62,7 @@ const HeaderDark = () => {
                 <DropdownMenu />
               </nav>
 
-              {/* Mobile toggle */}
+              {/* Mobile toggle (hidden on ≥992px) */}
               <button
                 type="button"
                 className={`ptf-offcanvas-menu-icon js-offcanvas-menu-toggle bar right ${isOpen ? "is-active" : ""}`}
@@ -85,20 +78,19 @@ const HeaderDark = () => {
         </div>
       </header>
 
-      {/* Dark overlay (click to close) */}
+      {/* Dim overlay */}
       <div
         className={`ptf-offcanvas-overlay ${isOpen ? "is-open" : ""}`}
         onClick={closeMenu}
         aria-hidden={!isOpen}
       />
 
-      {/* Off-canvas menu panel */}
+      {/* Off-canvas */}
       <aside
         id="mobile-menu"
         className={`ptf-offcanvas-menu ptf-offcanvas-menu--dark ${isOpen ? "is-open" : ""}`}
         aria-hidden={!isOpen}
       >
-        {/* Header row — language switcher removed */}
         <div className="ptf-offcanvas-menu__header">
           <span
             className="ptf-offcanvas-menu-icon js-offcanvas-menu-toggle"
@@ -109,7 +101,6 @@ const HeaderDark = () => {
             <i className="lnir lnir-close"></i>
           </span>
         </div>
-
         <MobileMenu onNavigate={closeMenu} />
       </aside>
     </>

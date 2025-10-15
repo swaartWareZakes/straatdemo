@@ -21,7 +21,13 @@ const Contact = () => {
           <div className="ptf-page ptf-page--contact">
 
             {/* === CONTACT HEADER === */}
-            <section>
+            <section
+            style={{
+              position: "relative",
+              zIndex: 1,
+              paddingTop: "var(--ptf-navbar-height, 100px)",
+            }}
+            >
               <div
                 className="ptf-spacer"
                 style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}

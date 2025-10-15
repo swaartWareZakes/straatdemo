@@ -122,3 +122,32 @@
 @import "widgets/ptf-twitter-review";
 @import "widgets/ptf-video-button";
 // }
+
+
+/* 0) Consistent page background + stop horizontal scroll */
+:root { --page-bg: var(--ptf-color-12); } /* your dark */
+html, body { background: var(--page-bg); overflow-x: hidden; }
+.ptf-site-wrapper,
+.ptf-site-wrapper__inner { background: var(--page-bg); overflow-x: hidden; }
+
+/* 1) Never let sections exceed the viewport width */
+// section, .jarallax, .ptf-page, .container-xxl { max-width: 100vw; }
+
+/* 2) Kill the negative slider gutters on small screens (cause of the “white pane”) */
+@media (max-width: 768px) {
+  /* Your portfolio slider */
+  .slide-portfolio .slick-list { margin-left: 0 !important; margin-right: 0 !important; }
+  .slide-portfolio .slick-slide { padding-left: 0 !important; padding-right: 0 !important; }
+
+  /* The testimonial slider with -100px / -30px margins */
+  .testimonial-100-spacer .slick-slider { margin: 0 !important; }
+  .testimonial-100-spacer .slick-initialized .slick-slide { padding: 0 !important; }
+}
+
+/* 3) Off-canvas shouldn’t push layout when closed */
+.ptf-offcanvas-menu { will-change: transform; }
+.ptf-offcanvas-menu:not(.is-open) { transform: translateX(100%); border-left: 0; }
+
+/* 4) Hero: avoid double container padding causing overflow */
+.hero-wrapper { padding-top: var(--ptf-navbar-height, 88px); }
+.container-xxl .hero-wrapper .container-xxl { max-width: none; width: 100%; padding-left: 0; padding-right: 0; }

@@ -123,14 +123,6 @@
   }
 }
 
-.ptf-offcanvas-menu-icon {
-  display: inline-flex;
-
-  &:hover {
-    color: inherit;
-  }
-}
-
 /* Overlay */
 .ptf-offcanvas-overlay {
   position: fixed;
@@ -264,6 +256,13 @@
   .mobile-nav__link { padding: 1rem 1rem; }
 }
 
+.ptf-offcanvas-menu-icon {
+  display: inline-flex;
+
+  &:hover {
+    color: inherit;
+  }
+}
 
 .ptf-offcanvas-menu-icon,
 .ptf-slide-menu-icon {
@@ -372,6 +371,37 @@
 .active-page{
   color: #ffd900 !important;
 }
+
+/* Make navbar transparent until scrolled (solid only when --solid is present) */
+.ptf-navbar {
+  background-color: transparent !important;
+}
+.ptf-navbar.ptf-navbar--solid {
+  background-color: var(--ptf-color-12) !important; /* dark solid after scroll */
+}
+
+/* Show white text/logo when transparent (like Agency) */
+.ptf-navbar.ptf-navbar--transparent.ptf-navbar--white-text-on-top:not(.ptf-navbar--solid) {
+  color: var(--ptf-color-white);
+  .ptf-navbar-logo img.black { display: none; }
+  .ptf-navbar-logo img.white { display: block; }
+}
+
+/* When solid, flip back if you use two logo variants */
+.ptf-navbar.ptf-navbar--solid {
+  .ptf-navbar-logo img.black { display: block; }
+  .ptf-navbar-logo img.white { display: none; }
+}
+
+/* Hide mobile hamburger on desktop, hide desktop nav on mobile */
+@media (min-width: 992px) {
+  .ptf-offcanvas-menu-icon { display: none !important; }
+}
+@media (max-width: 991.98px) {
+  .ptf-nav--default { display: none !important; }
+}
+
+/* Keep overlay/panel styles you already added */
 // import
 @import "header/default";
 @import "header/slide";

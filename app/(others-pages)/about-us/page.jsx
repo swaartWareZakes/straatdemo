@@ -24,7 +24,13 @@ const AboutUs = () => {
 
         <div className="ptf-main">
           <div className="ptf-page ptf-page--home-dark">
-            <section>
+            <section
+              style={{
+                position: "relative",
+                zIndex: 1,
+                paddingTop: "var(--ptf-navbar-height, 100px)",
+              }}
+            >
               <div
                 className="ptf-spacer"
                 style={{ "--ptf-xxl": "6.25rem", "--ptf-md": "3.125rem" }}
@@ -108,6 +114,7 @@ SOLUTIONS
                       </div>
                     </div>
                   </div>
+
                   <div className="col-xl-6">
                     <div
                       className="ptf-spacer"
@@ -140,6 +147,8 @@ SOLUTIONS
                       </div>
                     </div>
                   </div>
+
+                  
                 </div>
               </div>
 

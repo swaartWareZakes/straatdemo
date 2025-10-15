@@ -8,6 +8,8 @@ import ContactJarallax from "../../../components/jarallax/ContactJarallax";
 import ServiceListFour from "../../../components/list/ServiceListFour";
 import BrandFive from "../../../components/brand/BrandFive";
 import TestimonialFour from "../../../components/testimonial/TestimonialFour";
+import HeroAgency from "@/components/hero/HeroAgency";
+
 
 export const metadata = {
   title: "Home || Straat Africa – Media in Motion",
@@ -30,7 +32,16 @@ const HomeDark = () => {
             ></div>
 
             <div className="container-xxl">
-              <HeroDark />
+             
+            <section className="hero-wrapper" style={{
+              position: "relative",
+              zIndex: '1',
+              paddingTop: `var(--ptf-navbar-height, 100px)`
+            }}>
+              <div className="container-xxl">
+                <HeroDark />
+              </div>
+            </section>
             </div>
 
             <div
