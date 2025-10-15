@@ -3,13 +3,13 @@
 import Image from "next/image";
 
 const brandContent = [
-  {
-    delayAnimation: "0",
-    hoverBg: "#fffdee", // soft yellow
-    imgHeight: "85px",
-    imgName: "partner-taxiunion", // assets/img/root/partners/partner-taxiunion.png
-    title: "SA Taxi Union",
-  },
+  // {
+  //   delayAnimation: "0",
+  //   hoverBg: "#fffdee", // soft yellow
+  //   imgHeight: "85px",
+  //   imgName: "partner-taxiunion", // assets/img/root/partners/partner-taxiunion.png
+  //   title: "SA Taxi Union",
+  // },
   {
     delayAnimation: "100",
     hoverBg: "#fff9e6",

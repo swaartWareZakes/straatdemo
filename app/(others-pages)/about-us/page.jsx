@@ -177,15 +177,15 @@ SOLUTIONS
                       ></div>
                       <p className="fz-18 has-1-color">
                       Leading the charge
-with South Africa’s
-widest reach of In-
-Taxi TV screens, we
-also specialise in a
-diverse range of
-media solutions
-designed to reach
-South Africa’s
-dynamic audiences:
+                        with South Africa’s
+                        widest reach of In-
+                        Taxi TV screens, we
+                        also specialise in a
+                        diverse range of
+                        media solutions
+                        designed to reach
+                        South Africa’s
+                        dynamic audiences:
                       </p>
                     </div>
                     <div
@@ -218,7 +218,7 @@ dynamic audiences:
                       data-aos="fade"
                       data-aos-delay="0"
                     >
-                      <h2 className="large-heading has-white-color">Our Partners</h2>
+                      <h2 className="large-heading has-white-color">Our Reach</h2>
                     </div>
                     <div
                       className="ptf-spacer"
@@ -251,7 +251,7 @@ dynamic audiences:
             <section
               className="jarallax jarallax-img position-relative"
               style={{
-                backgroundImage: `url(/assets/img/testi.png)`,
+                backgroundImage: `url(https://iili.io/Ke5vdsS.png)`,
               }}
             >
               {/* Dark overlay */}
@@ -263,7 +263,7 @@ dynamic audiences:
                   left: 0,
                   width: "100%",
                   height: "100%",
-                  backgroundColor: "rgba(0, 0, 0, 0.6)", // adjust opacity here
+                  backgroundColor: "rgba(0, 0, 0, 0.2)", // adjust opacity here
                   zIndex: 1,
                 }}
               ></div>

@@ -10,7 +10,7 @@ const DropdownMenu = () => {
   const menuItems = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about-us" },
-    { name: "Works", path: "/works" },
+    { name: "Works", path: "/blog-sidebar" },
     // { name: "Team", path: "/team" },
     { name: "Contact", path: "/contact" },
   ];

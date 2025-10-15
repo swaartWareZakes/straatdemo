@@ -1,13 +1,19 @@
 "use client";
 
 import { useState } from "react";
+
+// sections
 import BlogSidebarPost from "../../../components/blog/blog-sidebar/BlogSidebarPost";
 import BlogFive from "../../../components/blog/BlogFive";
 import BlogFour from "../../../components/blog/BlogFour";
 import Pagination from "../../../components/blog/Pagination";
-import CopyRight from "../../../components/footer/copyright/CopyRight";
-import Footer from "../../../components/footer/Footer";
-import HeaderDefault from "../../../components/header/HeaderDefault";
+
+// dark header / footer (same set used on About Us)
+import HeaderDark from "../../../components/header/HeaderDark";
+import FooterThreeDark from "../../../components/footer/FooterThreeDark";
+import CopyRightThreeDark from "../../../components/footer/copyright/CopyRightThreeDark";
+
+// data
 import { blogContentfive } from "../../../data/blog";
 
 const BlogSidebar = () => {
@@ -15,41 +21,43 @@ const BlogSidebar = () => {
   const [pageNumber, setPageNumber] = useState(1);
 
   return (
-    <div className="ptf-site-wrapper animsition ptf-is--blog-sidebar">
+    // use the same dark wrapper class as About Us
+    <div className="ptf-site-wrapper animsition ptf-is--home-dark">
       <div className="ptf-site-wrapper__inner">
-        <HeaderDefault />
-        {/* End  HeaderHomeDefault */}
+        {/* Dark header */}
+        <HeaderDark />
 
-        <div className="main">
-          <div className="ptf-page ptf-page--blog-sidebar">
-            {/*=============================================
-            Start Blog  Section 
+        <div className="ptf-main">
+          {/* give the page the dark variant class */}
+          <div className="ptf-page ptf-page--blog-sidebar has-dark-color">
+            {/* =============================================
+                Intro / hero
             ============================================== */}
             <section>
-              {/* <!--Spacer--> */}
               <div
                 className="ptf-spacer"
                 style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
-              ></div>
+              />
               <div className="container-xxl">
                 <div className="row">
                   <div className="col-xl-10">
-                    {/* <!--Animated Block--> */}
                     <div
                       className="ptf-animated-block"
                       data-aos="fade"
                       data-aos-delay="0"
                     >
-                      <h1 className="large-heading">Our Journal</h1>
+                      {/* white heading like About Us */}
+                      <h1 className="large-heading has-white-color">Recent Works</h1>
                     </div>
                   </div>
                 </div>
-                {/* <!--Spacer--> */}
+
                 <div
                   className="ptf-spacer"
                   style={{ "--ptf-xxl": "6.875rem" }}
-                ></div>
+                />
               </div>
+
               <div className="container-xxl">
                 <div
                   className="row"
@@ -58,43 +66,45 @@ const BlogSidebar = () => {
                     "--bs-gutter-y": "3.75rem",
                   }}
                 >
-                  <BlogFour />
+                  {/* this section inherits the dark text colors from the wrapper */}
+                  {/* <BlogFour /> */}
                 </div>
               </div>
-              {/* <!--Spacer--> */}
+
               <div
                 className="ptf-spacer"
                 style={{ "--ptf-xxl": "7.5rem", "--ptf-md": "3.75rem" }}
-              ></div>
+              />
             </section>
-            {/* End .blog */}
 
+            {/* =============================================
+                Divider
+            ============================================== */}
             <section>
               <div className="container-xxl">
-                {/* <!--Divider--> */}
                 <div
                   className="ptf-divider"
                   style={{
                     "--ptf-height": "1px",
-                    "--ptf-color": "var(--ptf-color-14)",
+                    // lighter line for dark bg
+                    "--ptf-color": "rgba(255,255,255,0.15)",
                   }}
-                ></div>
+                />
               </div>
             </section>
 
-            {/*=============================================
-            Start Blog With Sidebar  Section 
+            {/* =============================================
+                Blog + Sidebar
             ============================================== */}
             <section>
-              {/* <!--Spacer--> */}
               <div
                 className="ptf-spacer"
                 style={{ "--ptf-xxl": "7.5rem", "--ptf-md": "3.75rem" }}
-              ></div>
+              />
               <div className="container-xxl">
                 <div className="row">
+                  {/* posts */}
                   <div className="col-xl-8">
-                    {/* <!--Animated Block--> */}
                     <div
                       className="ptf-animated-block"
                       data-aos="fade"
@@ -106,58 +116,63 @@ const BlogSidebar = () => {
                           pageNumber={pageNumber}
                         />
                       </div>
-                      {/* End .ptf-isotope-grid */}
                     </div>
-                    {/* <!--Spacer--> */}
+
                     <div
                       className="ptf-spacer"
                       style={{
                         "--ptf-xxl": "9.375rem",
                         "--ptf-md": "4.6875rem",
                       }}
-                    ></div>
-                    <Pagination
+                    />
+
+                    {/* <Pagination
                       page={page}
                       setPage={setPage}
                       pageNumber={pageNumber}
                       setPageNumber={setPageNumber}
                       blogContentfive={blogContentfive}
-                    />
+                    /> */}
                   </div>
-                  {/* Blog grid  */}
+
+                  {/* sidebar (forced dark surface just in case your theme lacks a built-in class) */}
                   <div className="col-xl-4">
-                    <div className="ptf-sidebar ptf-sidebar--right">
+                    {/* <aside
+                      className="ptf-sidebar ptf-sidebar--right"
+                      style={{
+                        background: "var(--ptf-color-16)", // dark surface
+                        borderRadius: "12px",
+                        padding: "2rem",
+                        border: "1px solid rgba(255,255,255,0.08)",
+                      }}
+                    >
                       <BlogSidebarPost />
-                    </div>
+                    </aside> */}
                   </div>
-                  {/* End sidebar */}
                 </div>
               </div>
-              {/* <!--Spacer--> */}
+
               <div
                 className="ptf-spacer"
-                style={{ "--ptf-xxl": "10rem", "--ptf-md": " 5rem" }}
-              ></div>
+                style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
+              />
             </section>
           </div>
-          {/* End .ptf-page */}
         </div>
       </div>
-      {/* End .main */}
 
-      {/* <!--Footer--> */}
-      <footer className="ptf-footer ptf-footer--style-1">
+      {/* Dark footer (same as About Us) */}
+      <footer className="ptf-footer ptf-footer--style-5">
         <div className="container-xxl">
           <div className="ptf-footer__top">
-            <Footer />
+            <FooterThreeDark />
           </div>
           <div className="ptf-footer__bottom">
-            <CopyRight />
+            <CopyRightThreeDark />
           </div>
         </div>
       </footer>
     </div>
-    // End .ptf-is--blog-grid
   );
 };
 

@@ -16,12 +16,12 @@ const BlogFive = ({ blogContentfive, pageNumber }) => {
               <div className="ptf-post__media">
                 <Link
                   className="ptf-work__link"
-                  href={`/blog/${val.id}`}
+                  href={`#`}
                 ></Link>
                 <Image
                   width={1200}
                   height={1200}
-                  style={{ width: "100%", height: "100%" }}
+                  style={{ width: "100%", height: "100%", color:"white !important" }}
                   src={val.img}
                   alt={val.categories}
                   loading="lazy"
@@ -33,9 +33,10 @@ const BlogFive = ({ blogContentfive, pageNumber }) => {
                     <span className="cat">{val.categories}</span>
                     <span className="date">{val.date}</span>
                   </div>
-                  <h3 className="ptf-post__title">
+                  <h3 className="ptf-post__title" style={{color:"white !important"}}>
                     <Link
-                      href={`/blog/${val.id}`}
+                      href={`#`}
+                      style={{color:"white !important"}}
                     >
                       {val.title}
                     </Link>
@@ -45,14 +46,14 @@ const BlogFive = ({ blogContentfive, pageNumber }) => {
                   <div className="ptf-post__info">
                     <Link
                       className="comments"
-                      href={`/blog/${val.id}`}
+                      href={`#`}
                     >
                       {" "}
                       <i className="lnil lnil-comments"></i> {val.comments}
                     </Link>
-                    <a className="author" href="#">
-                      <i className="lnil lnil-user"></i>by
-                      <span>{val.author}</span>
+                    <a className="author" href="#" >
+                      <i className="lnil lnil-user"></i>by :
+                      <span style={{color:"white !important"}}>{val.author}</span>
                     </a>
                   </div>
                 </footer>
