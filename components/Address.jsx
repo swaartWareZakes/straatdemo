@@ -23,9 +23,9 @@ const Address = () => {
         <h5 className="fz-14 text-uppercase has-3-color fw-normal">Email</h5>
         <div className="ptf-spacer" style={{ "--ptf-xxl": "1.25rem" }}></div>
         <p className="fz-20 lh-1p5 has-white-color">
-          <a href="mailto:info@straatafrica.co.za">info@straatafrica.co.za</a>
+          <a href="mailto:heita@straatafrica.co.za">heita@straatafrica.co.za</a>
           <br />
-          <a href="mailto:partnerships@straatafrica.co.za">partnerships@straatafrica.co.za</a>
+          {/* <a href="mailto:partnerships@straatafrica.co.za">partnerships@straatafrica.co.za</a> */}
         </p>
       </div>
 
