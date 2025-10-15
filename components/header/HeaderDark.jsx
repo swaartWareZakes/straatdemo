@@ -2,27 +2,33 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import MobileMenu from "./menu/MobileMenu";
-import DropdownMenu from "./menu/DropdownMenu";
 import Image from "next/image";
-const HeaderDark = () => {
-  const [click1, setClick1] = useState(false);
-  const handleClick1 = () => setClick1(!click1);
+import DropdownMenu from "./menu/DropdownMenu";
+import MobileMenu from "./menu/MobileMenu";
 
+const HeaderDark = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const [navbar, setNavbar] = useState(false);
 
-  const changeBackground = () => {
-    if (typeof window !== "undefined") {
-      if (window.scrollY >= 80) {
-        setNavbar(true);
-      } else {
-        setNavbar(false);
-      }
-    }
-  };
+  const toggleMenu = () => setIsOpen((s) => !s);
+  const closeMenu = () => setIsOpen(false);
+
+  // Sticky header on scroll
   useEffect(() => {
+    const changeBackground = () => {
+      if (window.scrollY >= 80) setNavbar(true);
+      else setNavbar(false);
+    };
     window.addEventListener("scroll", changeBackground);
+    return () => window.removeEventListener("scroll", changeBackground);
   }, []);
+
+  // Lock body scroll when menu is open
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      document.body.style.overflow = isOpen ? "hidden" : "";
+    }
+  }, [isOpen]);
 
   return (
     <>
@@ -36,15 +42,15 @@ const HeaderDark = () => {
         >
           <div className="container-xxl">
             <div className="ptf-navbar-inner">
-              {/* <!--Logo--> */}
-              <Link className="ptf-navbar-logo" href="/">
+              {/* Logo */}
+              <Link className="ptf-navbar-logo" href="/" aria-label="Straat Africa home">
                 <Image
                   width={151}
                   height={146}
                   style={{ objectFit: "contain" }}
                   className="black"
                   src="/assets/img/root/lg.webp"
-                  alt="brand"
+                  alt="Straat Africa logo"
                   loading="lazy"
                 />
                 <Image
@@ -53,55 +59,59 @@ const HeaderDark = () => {
                   style={{ objectFit: "contain" }}
                   className="white"
                   src="/assets/img/root/lg.webp"
-                  alt="brand"
+                  alt="Straat Africa logo"
                   loading="lazy"
                 />
               </Link>
-              {/* <!--Navigation--> */}
+
+              {/* Desktop nav */}
               <nav className="ptf-nav ptf-nav--default">
-                {/* <!--Menu--> */}
                 <DropdownMenu />
               </nav>
-              {/* <!--Buttons--> */}
-              {/* <!--Offcanvas Menu Toggle--> */}
-              <div
-                className="ptf-offcanvas-menu-icon js-offcanvas-menu-toggle bar right"
-                onClick={handleClick1}
+
+              {/* Mobile toggle */}
+              <button
+                type="button"
+                className={`ptf-offcanvas-menu-icon js-offcanvas-menu-toggle bar right ${isOpen ? "is-active" : ""}`}
+                onClick={toggleMenu}
+                aria-expanded={isOpen}
+                aria-controls="mobile-menu"
+                aria-label={isOpen ? "Close menu" : "Open menu"}
               >
-                <i className="lnir lnir-menu-alt-5"></i>
-              </div>
-              {/* Toggle bar icon */}
+                <i className={`lnir ${isOpen ? "lnir-close" : "lnir-menu-alt-5"}`}></i>
+              </button>
             </div>
           </div>
         </div>
       </header>
-      {/* End header */}
 
+      {/* Dark overlay (click to close) */}
       <div
-        className={
-          click1 ? "ptf-offcanvas-menu is-open" : "ptf-offcanvas-menu "
-        }
+        className={`ptf-offcanvas-overlay ${isOpen ? "is-open" : ""}`}
+        onClick={closeMenu}
+        aria-hidden={!isOpen}
+      />
+
+      {/* Off-canvas menu panel */}
+      <aside
+        id="mobile-menu"
+        className={`ptf-offcanvas-menu ptf-offcanvas-menu--dark ${isOpen ? "is-open" : ""}`}
+        aria-hidden={!isOpen}
       >
+        {/* Header row — language switcher removed */}
         <div className="ptf-offcanvas-menu__header">
-          <div className="ptf-language-switcher">
-            <a className="is-active" href="#">
-              Eng
-            </a>
-            <a href="#">Fra</a>
-            <a href="#">Ger</a>
-          </div>
           <span
             className="ptf-offcanvas-menu-icon js-offcanvas-menu-toggle"
-            onClick={handleClick1}
+            onClick={toggleMenu}
+            aria-label="Close menu"
+            role="button"
           >
             <i className="lnir lnir-close"></i>
           </span>
         </div>
-        {/* End .ptf-offcanvas-menu__header */}
 
-        <MobileMenu />
-      </div>
-      {/* End sidebar menu */}
+        <MobileMenu onNavigate={closeMenu} />
+      </aside>
     </>
   );
 };
