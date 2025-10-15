@@ -100,7 +100,7 @@ const HeroDark = () => {
           data-aos="fade"
           data-aos-delay="100"
         >
-          <p className="fz-24 has-white-color" style={{ maxWidth: "37.5rem" }}>
+          <p className="fz-18 has-white-color" style={{ maxWidth: "37.5rem" }}>
             {heroContent.descriptions}
           </p>
         </div>
