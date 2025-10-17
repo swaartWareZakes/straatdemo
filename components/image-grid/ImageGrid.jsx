@@ -6,8 +6,8 @@ import Image from "next/image";
 const imageList = [
   { img: "https://iili.io/KeDLe5X.png", delayAnimation: "0" },
   { img: "https://iili.io/KetYAsn.png", delayAnimation: "100" },
-  { img: "https://iili.io/KebOHaR.png", delayAnimation: "0" },
-  { img: "https://iili.io/Kebemdv.png", delayAnimation: "100" },
+  // { img: "https://iili.io/KebOHaR.png", delayAnimation: "0" },
+  // { img: "https://iili.io/Kebemdv.png", delayAnimation: "100" },
 
 ];
 
